@@ -89,7 +89,7 @@ begin
    declare
       Flat  : Image_Grid (1 .. 10, 1 .. 10) := (others => (others => 50.0));
       Edges : Edge_Grid (1 .. 10, 1 .. 10);
-      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 3, Threshold => 0.01);
+      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 5, Threshold => 0.01);
    begin
       Detect_Edges_LoG (Flat, Edges, P);
 
@@ -122,7 +122,7 @@ begin
    declare
       Img   : Image_Grid (1 .. 10, 1 .. 10) := (others => (others => 0.0));
       Edges : Edge_Grid (1 .. 10, 1 .. 10);
-      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 3, Threshold => 0.01);
+      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 5, Threshold => 0.01);
    begin
       -- Set right half to bright intensity
       for I in 1 .. 10 loop
@@ -153,7 +153,7 @@ begin
    declare
       Img   : Image_Grid (1 .. 10, 1 .. 10) := (others => (others => 0.0));
       Edges : Edge_Grid (1 .. 10, 1 .. 10);
-      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 3, Threshold => 0.01);
+      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 5, Threshold => 0.01);
    begin
       for I in 6 .. 10 loop
          for J in 1 .. 10 loop
@@ -199,7 +199,7 @@ begin
    declare
       Img   : Image_Grid (1 .. 5, 1 .. 5) := (others => (others => 0.0));
       Edges : Edge_Grid (1 .. 5, 1 .. 5);
-      P     : Parameters := (Sigma => -1.0, Sigma_Ratio => 1.6, Kernel_Dim => 3, Threshold => 0.01);
+      P     : Parameters := (Sigma => -1.0, Sigma_Ratio => 1.6, Kernel_Dim => 5, Threshold => 0.01);
    begin
       Detect_Edges_LoG (Img, Edges, P);
       Assert (False, "Failed to raise Invalid_Parameters");
@@ -215,7 +215,7 @@ begin
    declare
       Img   : Image_Grid (1 .. 10, 1 .. 10) := (others => (others => 0.0));
       Edges : Edge_Grid (1 .. 10, 1 .. 10);
-      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 3, Threshold => 500.0);
+      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 5, Threshold => 500.0);
    begin
       -- Weak step edge
       for I in 1 .. 10 loop
@@ -238,7 +238,7 @@ begin
    declare
       Img   : Image_Grid (1 .. 10, 1 .. 10) := (others => (others => 0.0));
       Edges : Edge_Grid (1 .. 10, 1 .. 10);
-      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 3, Threshold => 0.01);
+      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 5, Threshold => 0.01);
    begin
       for I in 1 .. 10 loop
          for J in 1 .. 10 loop
@@ -286,7 +286,7 @@ begin
    declare
       Img   : Image_Grid (1 .. 9, 1 .. 9) := (others => (others => 0.0));
       Edges : Edge_Grid (1 .. 9, 1 .. 9);
-      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 3, Threshold => 0.001);
+      P     : Parameters := (Sigma => 1.0, Sigma_Ratio => 1.6, Kernel_Dim => 5, Threshold => 0.001);
    begin
       Img (5, 5) := 255.0; -- Impulse in center
       Detect_Edges_LoG (Img, Edges, P);
